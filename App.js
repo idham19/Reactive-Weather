@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 // Import data and WeatherCard here
 import WeatherCard from "./components/WeatherCard";
-const cities = require("./data")
-console.log(cities)
+const cities = require("./data");
+
+
+
 function App() {
+  const [location,setLocation]=useState("")
   return (
     <>
       <h1 className="title">REACTIVE WEATHER</h1>
@@ -12,7 +15,7 @@ function App() {
         {
           /* Render components here */
           cities.map((city) => (
-            <WeatherCard  data={city} />
+            <WeatherCard data={city} />
           ))
         }
       </div>
